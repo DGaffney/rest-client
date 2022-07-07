@@ -10,7 +10,7 @@ s = eval(File.read(File.join(File.dirname(__FILE__), 'rest-client.gemspec')))
 platform = ENV['BUILD_PLATFORM'] || RUBY_PLATFORM
 
 case platform
-when /(mingw32|mswin32)/
+when /(mingw32|mswin32|mingw64|mswin64)/
   # ffi is needed for RestClient::Windows::RootCerts
   s.add_dependency('ffi', '~> 1.9')
   s.platform = platform
